@@ -6,7 +6,6 @@ gunicorn
 packaging
 pillow
 psycopg2
-sqlparse
 typing_extensions
 tzdata
 whitenoise
