@@ -18,6 +18,10 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -26,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xlzlpunj3bmj4wti=2+ldbs&#+h0-_)c3iuq-$*ew$-rexn+56'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
@@ -81,21 +85,22 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'desarrolloWeb',  # Or path to database file if using sqlite3. #sga29
-        'USER': 'postgres',  # Not used with sqlite3.
-        'PASSWORD': 'ElkinsVite2001',  # Not used with sqlite3.
-        'HOST': '127.0.0.1',  # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#         'NAME': 'desarrolloWeb',  # Or path to database file if using sqlite3. #sga29
+#         'USER': 'postgres',  # Not used with sqlite3.
+#         'PASSWORD': 'ElkinsVite2001',  # Not used with sqlite3.
+#         'HOST': '127.0.0.1',  # Set to empty string for localhost. Not used with sqlite3.
+#         'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
+#     }
+# }
 
-database_url = os.getenv('DATABASE_URL')
-DATABASES["default"] = dj_database_url.parse("postgresql://instanceelkins_dgks_user:NGhKedB5oeu2zTAD3PTwFriOzFmDJ0cv@dpg-cq0dssqju9rs73arnrb0-a.oregon-postgres.render.com/instanceelkins_dgks")
-#DATABASES['default'] = dj_database_url.parse(database_url)
+DATABASES = {
+    'default': dj_database_url.parse(env('DATABASE_URL'))
+
+}
 
 
 # Password validation
