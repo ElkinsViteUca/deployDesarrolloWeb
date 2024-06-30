@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ titulo }}</title>
+        {% load static %}
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href={% static "css/materialize.min.css"%}  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        {% block headercss %}
+        {% endblock %}
+</head>
+<body>
+<header>
+    {% block header%}
+    {% endblock %}
+</header>
+    {% block carrousel%}
+    {% endblock %}
+<div>
+
+    {% block body %}
+    {% endblock %}
+</div>
+    {% block footer%}
+    {% endblock %}
+<!--Sweet Alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {% block js %}
+
+    {% endblock %}
+<!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src={% static "js/materialize.min.js" %}></script>
+      <script type="text/javascript" src={% static "js/scriptBottom.js" %}></script>
+      <script type="text/javascript" src={% static "js/Alertas.js" %}></script>
+
+          <script >
+        M.AutoInit();
+      </script>
+
+</body>
+
+</html>
+

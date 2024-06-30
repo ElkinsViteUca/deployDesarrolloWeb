@@ -1,0 +1,29 @@
+{% extends 'delateBase.html' %}
+
+{% block columns %}
+    <th>Nombre</th>
+    <th>Marca</th>
+    <th>Pulgadas</th>
+    <th>Panel</th>
+    <th>Resolución</th>
+    <th>Foto</th>
+    <th>Precio</th>
+    <th>Stock</th>
+{% endblock %}
+
+{% block rows %}
+
+    <tr>
+      <td>{{ object.nombretv }}</td>
+      <td>{{ object.marca }}</td>
+      <td>{{ object.pulgadas }}</td>
+      <td>{{ object.tipoPanel }}</td>
+      <td>{{ object.resolucion }}</td>
+      <td>
+          <img width="70px" src="{{ object.get_image }}" alt="sinfoto">
+      </td>
+      <td>{{ object.costo }}</td>
+      <td>{{ object.stock }}</td>
+    </tr>
+
+{% endblock %}

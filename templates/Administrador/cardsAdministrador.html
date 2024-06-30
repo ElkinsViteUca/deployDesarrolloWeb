@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+      <!--********************Cabecera********************-->
+
+    {% block header %}
+        {% include 'Administrador/navAdministrador.html' %}
+    {% endblock %}
+    <!--********************Cabecera********************-->
+{% block body %}
+<div class="container">
+        <div class="row">
+          <div class="col s4 ">
+            <div class="card small">
+              <div class="card-image">
+                <img src={% static "img\televisores\tv1.jpg"%} alt="">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Televisores</span>
+                <a href="{% url 'listatelevisores' %}" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Listado</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s4 ">
+            <div class="card small">
+              <div class="card-image">
+                <img src={% static "img/refrigeradoras/refrigeradoras1.jpg" %} alt="">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Refrigeradoras</span>
+                <a href="{% url 'listarefrigeradoras' %}" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Listado</a>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s4 ">
+            <div class="card small">
+              <div class="card-image">
+                <img src={% static "img\microondas\microondas1.jpg"%} alt="">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Microondas</span>
+                <a href="{% url 'listamicroondas' %}" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Listado</a>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+{% endblock %}

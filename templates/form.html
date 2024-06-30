@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block header %}
+    {% include 'Administrador/navAdministrador.html' %}
+{% endblock %}
+{% load static %}
+{% comment %}#{{ form.as_p }}{% endcomment %}
+{% block body %}
+
+    <form  class="col s12" enctype="multipart/form-data" method="post" action="{{ action_save }}">
+      <div class="container">
+        <div class="row">
+        <div>
+          <h3 class="center-align" >{{ form_title }}</h3>
+          <h2 class="center-align" >{{ form_actualizar }}</h2>
+        </div>
+
+
+              {% csrf_token %}
+              {% block controls %}
+
+              {% endblock %}
+
+
+        </div>
+      </div>
+        <div class="container text-lighten-3">
+            <button class="btn waves-effect waves-light pulse" onclick="" type="submit" name="action">{{ boton }}
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+{% endblock %}
+{% block js %}
+<script type="application/javascript">
+        {% if form.errors %}
+            var errors = '';
+            {% for field in form %}
+                {% for error in field.errors %}
+                    errors += '{{ error }}\n';
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                errors += '{{ error }}\n';
+            {% endfor %}
+            Swal.fire({
+                title: 'Error!',
+                text: errors,
+                icon: 'error'
+            });
+        {% endif %}
+
+    </script>
+
+{% endblock %}
+

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+      <!--********************Cabecera********************-->
+    {% block header %}
+        {% include 'Public/navbarPublic.html' %}
+    {% endblock %}
+    <!--********************Cabecera********************-->
+
+
+ <!--********************Carrousel********************-->
+    {% block carrousel %}
+        {% include 'Public/carrouselPublic.html' %}
+    {% endblock %}
+    <!--********************Carrousel********************-->
+
+
+{% block body %}
+<div class="container">
+        <div class="row">
+          <div class="col s3 ">
+            <div class="card medium">
+              <div class="card-image">
+                <img src="{%  static 'img\cards\cards1.jpg' %}" alt="">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Televisores<i class="material-icons right">more_vert</i></span>
+                <p><a href={% url 'tvpublic' %}>Más Información</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s4 ">
+            <div class="card medium">
+              <div class="card-image">
+                <img src={%  static "img\cards\cards2.png" %} alt="">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Refrigeradoras<i class="material-icons right">more_vert</i></span>
+                <p><a href={% url 'refripublic' %}>Más Información</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s4 ">
+            <div class="card medium">
+              <div class="card-image">
+                <img src={% static "img\cards\cards3.png" %} alt="">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Microondas<i class="material-icons right">more_vert</i></span>
+                <p><a href={% url 'micropublic' %}>Más Información</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
+
+{% block footer%}
+    {% include 'Public/footerPublic.html' %}
+{% endblock %}

@@ -1,0 +1,23 @@
+<nav class="teal lighten-2">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Administrador</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href={% url 'listatelevisores' %}>Televisores</a></li>
+      <li><a href={% url 'listarefrigeradoras' %}>Refrigeradoras</a></li>
+      <li><a href={% url 'listamicroondas' %}>Microondas</a></li>
+      <li><a href={% url '' %}>Página Pública</a></li>
+      <li><a href="/admin">SisAdmin</a></li>
+      <li><a href={% url 'logout' %}>Salir</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo" >
+    <li><a href={% url 'listatelevisores' %}>Televisores</a></li>
+    <li><a href={% url 'listarefrigeradoras' %}>Refrigeradoras</a></li>
+    <li><a href={% url 'listamicroondas' %}>Microondas</a></li>
+    <li><a href={% url 'logout' %}>Salir</a></li>
+    <li><a href={% url '' %}>Página Pública</a></li>
+    <li><a href="/admin">SisAdmin</a></li>
+</ul>

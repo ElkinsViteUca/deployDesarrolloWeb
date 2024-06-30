@@ -1,0 +1,42 @@
+{% extends 'delete.html' %}
+{% block header %}
+    {% include 'Administrador/navAdministrador.html' %}
+{% endblock %}
+{% load static %}
+{% comment %}#{{ form.as_p }}{% endcomment %}
+{% block body %}
+
+    <form  class="col s12"  method="post" action="{{ action_save }}">
+        <div class="container">
+            <div class="row">
+                <div>
+                  <h3 class="center-align" >{{ table_title }}</h3>
+                </div>
+                {% csrf_token %}
+
+                <table class="striped centered responsive-table ">
+                  <thead>
+                    {% block columns %}
+
+                    {% endblock %}
+                  </thead>
+
+                  <tbody>
+                    {% block rows %}
+
+                    {% endblock %}
+                  </tbody>
+                </table>
+        </div>
+      </div>
+        <a href="{{ crear_url }}">
+          <div class="container text-lighten-3">
+            <button class="btn waves-effect red darken-1 pulse" type="submit" name="action">{{ boton }}
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </a>
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'delateBase.html' %}
+
+{% block columns %}
+    <th>Nombre</th>
+    <th>Marca</th>
+    <th>Litros</th>
+    <th>Modelo</th>
+    <th>Dimensiones</th>
+    <th>Foto</th>
+    <th>Color</th>
+    <th>Precio</th>
+    <th>Stock</th>
+{% endblock %}
+
+{% block rows %}
+
+    <tr>
+      <td>{{ object.nombremicroondas }}</td>
+      <td>{{ object.marcaMicroondas }}</td>
+      <td>{{ object.capacidad }}</td>
+      <td>{{ object.modelo }}</td>
+      <td>{{ object.dimensiones }}</td>
+      <td>
+          <img width="70px" src="{{ object.get_image }}" alt="sinfoto">
+      </td>
+      <td>{{ object.microondasColor }}</td>
+      <td>{{ object.costo }}</td>
+      <td>{{ object.stock }}</td>
+    </tr>
+{% endblock %}

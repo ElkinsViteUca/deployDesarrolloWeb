@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block header %}
+    {% include 'Administrador/navAdministrador.html' %}
+{% endblock %}
+{% load static %}
+{% comment %}#{{ form.as_p }}{% endcomment %}
+{% block body %}
+
+      <div class="container">
+        <div class="row">
+        <div>
+          <h3 class="center-align" >{{ form_title }}</h3>
+        </div>
+          <form  class="col s12"  method="post" action="{{ action_save }}">
+
+              {% csrf_token %}
+              {% block controls %}
+
+              {% endblock %}
+            <div class="container text-lighten-3">
+                <button class="btn waves-effect waves-light" type="submit" name="action">{{ boton }}
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {% endblock %}
+

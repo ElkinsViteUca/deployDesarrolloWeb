@@ -1,0 +1,40 @@
+{% extends 'listadoBase.html' %}
+
+{% block columns %}
+    <th>Nombre</th>
+    <th>Marca</th>
+    <th>Litros</th>
+    <th>Modelo</th>
+    <th>Dimensiones</th>
+    <th>Foto</th>
+    <th>Color</th>
+    <th>Precio</th>
+    <th>Stock</th>
+    <th>Acciones</th>
+{% endblock %}
+
+{% block rows %}
+
+    {% if object_list %}
+    {% for object in Refrigeradora %}
+    <tr>
+      <td>{{ object.nombrerefrigeradora }}</td>
+      <td>{{ object.refrigeradoramarcaRefri }}</td>
+      <td>{{ object.capacidadLitros }}</td>
+      <td>{{ object.refrigeradoramodeloRefri }}</td>
+      <td>{{ object.dimensiones }}</td>
+      <td>
+          <img width="70px" src="{{ object.get_image }}" alt="sinfoto">
+      </td>
+      <td>{{ object.refrigeradoraColor }}</td>
+      <td>{{ object.costo }}</td>
+      <td>{{ object.stock }}</td>
+      <td><a class="waves-effect waves-light btn-small" href={%  url 'actualizarrefrigeradoras' object.id %}>Editar ✏️</a>
+        <a class="waves-effect red darken-4 btn-small" href={%  url 'eliminarrefrigeradoras' object.id %}>Eliminar <i class="large material-icons">clear</i></a>
+      </td>
+    </tr>
+    {% endfor %}
+    {% else %}
+        <h1>No hay registros</h1>
+    {% endif %}
+{% endblock %}

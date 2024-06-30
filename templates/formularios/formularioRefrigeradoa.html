@@ -1,0 +1,64 @@
+{% extends 'form.html' %}
+{% load static %}
+{% block controls %}
+
+   <div class="row">
+      <div class="input-field col s6">
+          {{ form.nombrerefrigeradora }}
+        <label for="first_name">{{ span }}</label>
+      </div>
+
+      <div class="input-field col s6">
+        {{ form.refrigeradoramarcaRefri }}
+        <label>Marca</label>
+      </div>
+    </div>
+
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>IMG</span>
+          {{form.imagen}}
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+      </div>
+    </div>
+
+      <div class="input-field col s4">
+          {{ form.capacidadLitros }}
+        <label for="last_name">Litros</label>
+      </div>
+
+    <div class="input-field col s4">
+          {{ form.dimensiones }}
+        <label for="last_name">Dimensiones</label>
+      </div>
+
+    <div class="input-field col s4">
+          {{ form.refrigeradoraColor }}
+        <label for="last_name">Color</label>
+      </div>
+
+
+    <div class="input-field col s4">
+          {{ form.costo }}
+        <label for="last_name">Litros</label>
+      </div>
+
+      <div class="input-field col s4">
+          {{ form.stock }}
+        <label for="last_name">Stock</label>
+      </div>
+
+        <div class="input-field col s4">
+            {{ form.refrigeradoramodeloRefri }}
+            <label>Seleccione el Modelo </label>
+        </div>
+
+
+    </div>
+
+   {% comment %}{{ form.as_p }}{% endcomment %}
+
+    {% endblock %}
+   </div>

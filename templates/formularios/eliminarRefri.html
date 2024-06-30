@@ -1,0 +1,31 @@
+{% extends 'delateBase.html' %}
+
+{% block columns %}
+    <th>Nombre</th>
+    <th>Marca</th>
+    <th>Litros</th>
+    <th>Modelo</th>
+    <th>Dimensiones</th>
+    <th>Foto</th>
+    <th>Color</th>
+    <th>Precio</th>
+    <th>Stock</th>
+{% endblock %}
+
+{% block rows %}
+
+
+    <tr>
+      <td>{{ object.nombrerefrigeradora }}</td>
+      <td>{{ object.refrigeradoramarcaRefri }}</td>
+      <td>{{ object.capacidadLitros }}</td>
+      <td>{{ object.refrigeradoramodeloRefri }}</td>
+      <td>{{ object.dimensiones }}</td>
+      <td>
+          <img width="70px" src="{{ object.imagen }}" alt="sinfoto">
+      </td>
+      <td>{{ object.refrigeradoraColor }}</td>
+      <td>{{ object.costo }}</td>
+      <td>{{ object.stock }}</td>
+    </tr>
+{% endblock %}

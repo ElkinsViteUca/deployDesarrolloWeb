@@ -1,0 +1,40 @@
+{% extends 'listadoBase.html' %}
+
+{% block columns %}
+    <th>Nombre</th>
+    <th>Marca</th>
+    <th>Litros</th>
+    <th>Modelo</th>
+    <th>Dimensiones</th>
+    <th>Foto</th>
+    <th>Color</th>
+    <th>Precio</th>
+    <th>Stock</th>
+    <th>Acciones</th>
+{% endblock %}
+
+{% block rows %}
+
+    {% if object_list %}
+    {% for object in Microondas %}
+    <tr>
+      <td>{{ object.nombremicroondas }}</td>
+      <td>{{ object.marcaMicroondas }}</td>
+      <td>{{ object.capacidad }}</td>
+      <td>{{ object.modelo }}</td>
+      <td>{{ object.dimensiones }}</td>
+      <td>
+          <img width="70px" src="{{ object.get_image }}" alt="sinfoto">
+      </td>
+      <td>{{ object.microondasColor }}</td>
+      <td>{{ object.costo }}</td>
+      <td>{{ object.stock }}</td>
+      <td><a class="waves-effect waves-light btn-small" href={%  url 'actualizarmicroondas' object.id %}>Editar ✏️</a>
+        <a class="waves-effect red darken-4 btn-small" href={%  url 'eliminarmicroondas' object.id %}>Eliminar <i class="large material-icons">clear</i></a>
+      </td>
+    </tr>
+    {% endfor %}
+    {% else %}
+        <h1>No hay registros</h1>
+    {% endif %}
+{% endblock %}

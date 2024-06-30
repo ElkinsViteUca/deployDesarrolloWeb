@@ -1,0 +1,31 @@
+{% extends 'basePublic.html' %}
+{% load static %}
+
+      <!--********************Cabecera********************-->
+
+    {% block header %}
+        {% include 'Public/navbarPublic.html' %}
+    {% endblock %}
+    <!--********************Cabecera********************-->
+
+{% block body %}
+    {% for object in Televisor %}
+          <div class="col s4 ">
+            <div class="card medium">
+              <div class="card-image">
+                  <img src={{ object.get_image }} alt="">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{ object.nombretv }}{{ object.marca }}</span>
+                <p>Precio:{{ object.costo}}</p>
+                <p>Tamaño:{{ object.pulgadas }}</p>
+              </div>
+            </div>
+          </div>
+
+    {% endfor %}
+{% endblock %}
+
+{% block footer%}
+    {% include 'Public/footerPublic.html' %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'Administrador/baseAdministrador.html' %}
+{% load static %}
+run
+{% block main %}
+    <form class="col s12" method="post" action="{{ action_save }}" enctype="multipart/form-data">
+        <div class="row">
+            <div>
+                <h5 class="center-align">{{ titulo }}</h5>
+            </div>
+{#            {{  }}#}
+
+            <div class="container text-lighten-3">
+                <button class="btn waves-effect waves-light" type="submit" name="action">{{ boton }}
+                    <i class="material-icons right">send</i>
+                </button>
+
+                <a href="{{ lista_url }}" class="waves-effect waves-light btn-small">Button</a>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
