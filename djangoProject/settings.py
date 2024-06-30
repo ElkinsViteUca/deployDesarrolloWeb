@@ -58,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'djangoProject.urls'
@@ -96,6 +97,8 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 #         'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
 #     }
 # }
+
+
 
 DATABASES = {
     'default': dj_database_url.parse(env('DATABASE_URL'))
@@ -136,6 +139,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
