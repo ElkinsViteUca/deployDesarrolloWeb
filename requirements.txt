@@ -1,11 +1,11 @@
 ﻿asgiref
-dj-database-url==2.2.0
+dj-database-url
 Django
-django-environ==0.11.2
+django-environ
 gunicorn
-packaging==24.1
+packaging
 pillow
-psycopg2==2.9.9
-sqlparse==0.4.3
-typing_extensions==4.12.2
+psycopg2
+sqlparse
+typing_extensions
 tzdata
