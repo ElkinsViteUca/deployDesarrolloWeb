@@ -2,9 +2,6 @@ dj-database-url
 Django
 django-environ
 gunicorn
-packaging
 pillow
 psycopg2
-typing_extensions
-tzdata
 whitenoise
