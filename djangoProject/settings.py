@@ -93,9 +93,9 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get("DATABASE_URL")
+database_url = os.getenv('DATABASE_URL')
 #DATABASES["default"] = dj_database_url.parse("postgresql://instanceelkins_dgks_user:NGhKedB5oeu2zTAD3PTwFriOzFmDJ0cv@dpg-cq0dssqju9rs73arnrb0-a.oregon-postgres.render.com/instanceelkins_dgks")
-DATABASES["default"] = dj_database_url.parse("database_url")
+DATABASES['default'] = dj_database_url.parse('database_url')
 
 
 # Password validation
